@@ -2,14 +2,15 @@
   "name": "arocho-heroku",
   "version": "0.1.2",
   "description": "Computer / Data Scientist <3",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "~4.9.x",
     "cool-ascii-faces": "~1.3.x",
-    "node-linkedin": "~0.3.x"
+    "node-linkedin": "~0.3.x",
+    "passport-linkedin": ">= 0.0.0"
   },
   "engines": {
     "node": "0.10.x"
