@@ -1,32 +1,30 @@
 var express = require('express')
-  , http = require('http')
-  , passport = require('passport')
-  , util = require('util')
-  , LinkedInStrategy = require('passport-linkedin').Strategy
+var cool = require('cool-ascii-faces')
+var app = express();
 
-var LINKEDIN_API_KEY = "77ts672cxn6wfk";
-var LINKEDIN_SECRET_KEY = "GKy8lzvzAUi7secM";
+var api = '77ts672cxn6wfk';
+var secret = 'GKy8lzvzAUi7secM';
+var callback = 'https://allison.herokuapp.com';
 
+var Linkedin = require('node-linkedin')(api, secret, callback);
 
-// Use the LinkedInStrategy within Passport.
-//   Strategies in passport require a `verify` function, which accept
-//   credentials (in this case, a token, tokenSecret, and LinkedIn profile), and
-//   invoke a callback with a user object.
-passport.use(new LinkedInStrategy({
-    consumerKey: LINKEDIN_API_KEY,
-    consumerSecret: LINKEDIN_SECRET_KEY,
-    callbackURL: "http://arocho.herokuapp.com"
-  },
-  function(token, tokenSecret, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      // To keep the example simple, the user's LinkedIn profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the LinkedIn account with a user record in your database,
-      // and return that user instead.
-      return done(null, profile);
-    });
-  }
-));
+var linkedin = Linkedin.init('my_access_token');
 
+app.get('/oauth/linkedin', function(req, res) {
+    // This will ask for permisssions etc and redirect to callback url.
+    Linkedin.auth.authorize(res, ['r_fullprofile']);
+});
 
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
+
+app.get('/', function(request, response) {
+	var result = linkedin.people.me(function(err, $in) {
+    // Loads the profile of access token owner.
+});
+  response.send(result);
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
