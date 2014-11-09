@@ -1,5 +1,18 @@
 extends layout
 
+block append scripts
+    script(type='text/javascript', src='/js/alert.js')
+
 block content
-  h1= title
-  p Welcome to #{title}
+    h1= title
+    .row
+      ul.list-group.listTasks
+        - each task in tasks
+            li.list-group-item= task
+    .row
+        .col-lg-6
+            .input.group
+                input.form-control.txtInput(type='text')
+                span.input-group-btn
+                    button.btn.btn-default.btnAddTask(type='button') Add Task
+//btnAddTask and txtInput were added so that jquery may select them

@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var service = require('../services/task');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index.jade', 
+             {
+                title: 'Task Manager',
+                tasks: service.getTasks(req.session)
+             });
 });
 
 module.exports = router;

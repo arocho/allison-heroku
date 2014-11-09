@@ -1,7 +1,13 @@
 doctype html
 html
   head
+    //takes variable and puts it inside tag
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
   body
     block content
+    //scripts that run on every page
+    block scripts
+        script(type='text/javascript', src='/js/jquery-2.1.1.js')
+        script(type='text/javascript', src='/js/bootstrap.js')
