@@ -1,12 +1,13 @@
 {
   "name": "allison",
-  "version": "0.0.0",
+  "version": "4.9.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "express": "~4.9.0",
+    "express-session": ">= 0.0.0",
     "body-parser": "~1.8.1",
     "cookie-parser": "~1.3.3",
     "morgan": "~1.3.0",
