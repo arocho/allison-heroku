@@ -10,5 +10,5 @@ exports.create = function(req, res){
     //calls the addTask method
     //param method gets data from query string or body
     service.addTask(req.session, req.param('task'));
-    res.send(200);
+    res.status(200).end();
 }
