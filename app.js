@@ -45,9 +45,9 @@ app.use('/', routes);
 app.use('/users', users);
 
 //tasks
-app.get('/tasks', task.list);
-app.get('/tasks/new', task.create);
-app.post('/tasks', task.create);
+//app.get('/tasks', task.list);
+//app.get('/tasks/new', task.create);
+//app.post('/tasks', task.create);
 
 // error handlers
 

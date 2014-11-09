@@ -1,18 +1,29 @@
 extends layout
 
 block append scripts
-    script(type='text/javascript', src='/js/alert.js')
+    script(type='text/javascript', src='/js/twitter.js')
+    script(type='text/javascript', src='//platform.linkedin.com/in.js')
 
 block content
     h1= title
-    .row
-      ul.list-group.listTasks
-        - each task in tasks
-            li.list-group-item= task
-    .row
-        .col-lg-6
-            .input.group
-                input.form-control.txtInput(type='text')
-                span.input-group-btn
-                    button.btn.btn-default.btnAddTask(type='button') Add Task
-//btnAddTask and txtInput were added so that jquery may select them
+    //Accordion
+    .panel-group#accordion(role='tablist', aria-multiselectable='true')
+        //Twitter
+        .panel.panel-default
+            .panel-heading#headingOne(role='tab')
+                h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true') 
+                        |Twitter
+            .panel-collapse.collapse.out#collapseOne(role='tabpanel', aria-labelledby='headingOne')
+                .panel-body 
+                    a.twitter-timeline(href='https://twitter.com/Vamoavel', data-widget-id='531510242530426882') 
+                        |Tweets by @Vamoavel
+        //Linkedin
+        .panel.panel-default
+            .panel-heading#headingTwo(role='tab')
+                h4.panel-title
+                    a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo') 
+                        |Linkedin
+            .panel-collapse.collapse#collapseTwo(role='tabpanel', aria-labelledby='headingTwo')
+                .panel-body 
+                    script(type='IN/MemberProfile', data-id='http://www.linkedin.com/in/allisonarocho', data-format='inline', data-related='false')
