@@ -10,8 +10,6 @@ var session = require('express-session');
 
 //local files
 var routes = require('./routes/index.js');
-var users = require('./routes/users.js');
-var task = require('./routes/task.js');
 
 var app = express();
 
@@ -42,12 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Visible things start getting called here.
 app.use('/', routes);
-app.use('/users', users);
-
-//tasks
-//app.get('/tasks', task.list);
-//app.get('/tasks/new', task.create);
-//app.post('/tasks', task.create);
 
 // error handlers
 

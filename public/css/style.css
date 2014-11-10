@@ -13,6 +13,9 @@ h1 {
   color: #936;
   font-size: 60px;
 }
+h2 {
+  text-align: center;
+}
 .panel-group#accordion {
   margin: 0 auto;
   max-width: 950px;
@@ -34,8 +37,15 @@ h1 {
 .panel-body {
   text-align: center;
 }
-.panel-collapse.collapse#collapseTwo .panel-body iframe {
-  -ms-transform: scale(0.95, 0.95) translate(-15px, 0px);
-  -webkit-transform: scale(0.95, 0.95) translate(-15px, 0px);
-  transform: scale(0.95, 0.95) translate(-15px, 0px);
+.linkedin-container-div {
+  margin: 0 auto;
+  position: relative;
+  width: 275px;
+  height: 170px;
+  overflow: hidden;
+}
+.linkedin-container-div iframe {
+  position: absolute;
+  top: -17px;
+  left: -12px;
 }
