@@ -2,6 +2,7 @@
 }
 html {
   background-color: #fdfdf5;
+  min-width: 430px;
 }
 body {
   background-color: #fdfdf5;
@@ -34,6 +35,6 @@ h1 {
 .panel-body {
   text-align: center;
 }
-iframe#easyXDM_IN_Lib_li_gen_1415585714771_0_provider {
-  width: 280px;
+iframe {
+  diplay: inherit;
 }
