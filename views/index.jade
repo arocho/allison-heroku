@@ -11,6 +11,7 @@ block content
         .panel.panel-default(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true')
             .panel-heading#headingOne(role='tab')
                 h4.panel-title 
+                    a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true')
                         |Twitter
             .panel-collapse.collapse.out#collapseOne(role='tabpanel', aria-labelledby='headingOne')
                 .panel-body 
@@ -20,6 +21,7 @@ block content
         .panel.panel-default(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
             .panel-heading#headingTwo(role='tab')
                 h4.panel-title
+                    a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
                         |Linkedin
             .panel-collapse.collapse#collapseTwo(role='tabpanel', aria-labelledby='headingTwo')
                 .panel-body
