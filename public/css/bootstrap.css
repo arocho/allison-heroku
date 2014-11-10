@@ -9,8 +9,6 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-    /*for linkedin card*/
-    min-width: 430px;
 }
 body {
   margin: 0;
